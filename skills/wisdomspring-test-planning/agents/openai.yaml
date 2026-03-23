@@ -1,0 +1,4 @@
+interface:
+  display_name: "WisdomSpring Test Planning"
+  short_description: "Plan and run WisdomSpring service testing"
+  default_prompt: "Plan and execute WisdomSpring service testing using the bundled IA map, bundled screen plans, and bundled policy documents."
