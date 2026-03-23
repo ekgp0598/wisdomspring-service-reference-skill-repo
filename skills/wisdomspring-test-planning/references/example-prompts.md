@@ -2,6 +2,12 @@
 
 Use these prompts as copy-paste starters when sharing the skill with other people. The safest form is to mention the skill name explicitly.
 
+## 0. 서비스 처음 이해하기
+
+```text
+$wisdomspring-test-planning 위즈덤스프링이 어떤 서비스인지 하나도 모르는 사람에게 설명해줘. 서비스 목적, 주요 사용자 여정, 핵심 화면, 콘텐츠 구조, 멤버십 개념, 화면 분위기까지 한국어로 쉽게 설명해줘.
+```
+
 ## 1. 빠른 스모크 테스트
 
 ```text

@@ -9,6 +9,8 @@ description: Plan and execute manual testing for the WisdomSpring service using 
 
 Use this skill to turn bundled WisdomSpring artifacts into a practical QA plan and execution report. Build only the minimum context needed, test with explicit assumptions, and leave a clear Korean record of scenarios, results, defects, and open questions.
 
+If the user is new to WisdomSpring, do not jump straight into test cases. First explain the service, the major screens, the user journey, and the visual tone using the bundled newcomer and design references.
+
 ## Workflow
 
 ### 1. Fix the scope first
@@ -29,6 +31,8 @@ Always read these first:
 
 - `references/source-locations.md`
 - `references/service-overview.md`
+- `references/service-primer.md`
+- `references/visual-design-summary.md`
 - `references/ia-map.md`
 - `references/screen-index.md`
 
@@ -39,6 +43,7 @@ Read these only when needed:
 - `references/report-template.md` when you need to return a structured QA artifact
 - `references/expected-results.md` when you need richer expected-result patterns
 - `references/example-prompts.md` when you need ready-to-copy usage examples for end users
+- `references/design-image-index.md` when you need to map a screen or flow to specific design image files
 
 Then load only the matching local artifacts for the scoped area:
 
@@ -47,6 +52,19 @@ Then load only the matching local artifacts for the scoped area:
 - user-provided screenshots or live-service evidence only when visual confirmation is required
 
 Do not bulk-load the full `screen-plans` folder unless the user explicitly asks for a full-system regression.
+
+### 2-1. Newcomer onboarding mode
+
+When the user appears unfamiliar with WisdomSpring, answer in this order before deeper QA work:
+
+1. what the service is
+2. who it is for
+3. the main user journey
+4. the major screens and content types
+5. the visual and interaction tone
+6. the membership and admin-policy implications
+
+Use `references/service-primer.md` and `references/visual-design-summary.md` first for this mode.
 
 ### 3. Derive test scenarios
 
@@ -150,3 +168,4 @@ Always call out web and mobile differences when both artifacts exist.
 - If you cannot run the service, still return a document-based test plan and risk list.
 - If artifacts conflict, quote both sources briefly and mark the discrepancy as a spec gap.
 - This skill is packaged to be shareable; prefer bundled references over machine-specific absolute paths.
+- If the user asks what the service looks or feels like, answer from the bundled visual-design summary rather than generic design language.
