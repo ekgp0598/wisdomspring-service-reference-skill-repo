@@ -11,7 +11,7 @@ Portable Codex skill for planning and executing QA on the WisdomSpring service.
 After this repo is pushed to GitHub, install it with:
 
 ```powershell
-python "$env:USERPROFILE\.codex\skills\.system\skill-installer\scripts\install-skill-from-github.py" --repo OWNER/REPO --path skills/wisdomspring-test-planning
+python "$env:USERPROFILE\.codex\skills\.system\skill-installer\scripts\install-skill-from-github.py" --repo ekgp0598/wisdomspring-test-planning-skill-repo --path skills/wisdomspring-test-planning
 ```
 
 Then restart Codex and use:
