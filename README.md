@@ -11,7 +11,13 @@ Portable Codex skill for WisdomSpring service reference, policy lookup, design w
 After this repo is pushed to GitHub, install it with:
 
 ```powershell
+# Windows
 python "$env:USERPROFILE\.codex\skills\.system\skill-installer\scripts\install-skill-from-github.py" --repo ekgp0598/wisdomspring-service-reference-skill-repo --path skills/wisdomspring-service-reference
+```
+
+```bash
+# macOS
+python3 "$HOME/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py" --repo ekgp0598/wisdomspring-service-reference-skill-repo --path skills/wisdomspring-service-reference
 ```
 
 Then restart Codex and use:
