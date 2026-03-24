@@ -2,7 +2,7 @@
 
 Use this file when the user asks what WisdomSpring looks like, how the product feels, or how screens are visually structured.
 
-This summary is derived from the design images in the screen-planning folder.
+This summary is derived from the bundled design images under `references/design-images/`.
 
 ## Overall tone
 

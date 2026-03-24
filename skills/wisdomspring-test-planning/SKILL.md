@@ -44,13 +44,14 @@ Read these only when needed:
 - `references/report-template.md` when you need to return a structured QA artifact
 - `references/expected-results.md` when you need richer expected-result patterns
 - `references/example-prompts.md` when you need ready-to-copy usage examples for end users
-- `references/design-image-index.md` when you need to map a screen or flow to specific design image files
+- `references/design-image-index.md` when you need to map a screen or flow to bundled design image files under `references/design-images/`
 
 Then load only the matching local artifacts for the scoped area:
 
 - bundled IA map for menu depth, page or layer shape, and platform mapping
 - bundled markdown screen definitions under `references/screen-plans/` for steps, rules, and unresolved notes
-- user-provided screenshots or live-service evidence only when visual confirmation is required
+- bundled image files under `references/design-images/` when visual confirmation is required before asking for user screenshots
+- user-provided screenshots or live-service evidence only when the bundled images are not enough
 
 Do not bulk-load the full `screen-plans` folder unless the user explicitly asks for a full-system regression.
 
