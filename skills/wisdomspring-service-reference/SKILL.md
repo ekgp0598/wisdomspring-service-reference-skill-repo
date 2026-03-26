@@ -1,6 +1,14 @@
 ---
 name: wisdomspring-service-reference
-description: Use when Codex needs a bundled reference for the WisdomSpring service, including service overview, screen plans, bundled design images, admin policies, and QA guidance. Supports service explanation, policy comparison, screen structure walkthroughs, test strategy writing, scenario design, and Korean QA reporting without relying on a specific user's local folders.
+description: >
+  WisdomSpring 서비스 레퍼런스 스킬. 서비스 개요, 화면기획서, 디자인 이미지, 어드민 정책, QA 가이드를 번들로 제공한다.
+  트리거: (1) "위즈덤스프링 서비스 설명해줘" (2) "WisdomSpring 테스트 케이스/시나리오 만들어줘"
+  (3) 화면 ID(HM-001, FD-001, PR-410 등)와 함께 QA 요청 (4) "어드민 정책 확인해줘"
+  (5) "위즈덤스프링 화면 구조 알려줘" (6) 서비스 온보딩, 정책 비교, 리스크 분석 요청.
+  입력: 화면 ID, 기능명, 정책 질문, 또는 자유 질문.
+  출력: 한국어 QA 보고서, 테스트 시나리오, 서비스 설명, 정책 비교 결과.
+user-invocable: true
+argument-hint: "[화면ID 또는 질문]"
 ---
 
 # WisdomSpring Service Reference
