@@ -1,14 +1,6 @@
 ---
 name: wisdomspring-service-reference
-description: >
-  WisdomSpring 서비스 레퍼런스 스킬. 서비스 개요, 화면기획서, 디자인 이미지, 어드민 정책, QA 가이드를 번들로 제공한다.
-  트리거: (1) "위즈덤스프링 서비스 설명해줘" (2) "WisdomSpring 테스트 케이스/시나리오 만들어줘"
-  (3) 화면 ID(HM-001, FD-001, PR-410 등)와 함께 QA 요청 (4) "어드민 정책 확인해줘"
-  (5) "위즈덤스프링 화면 구조 알려줘" (6) 서비스 온보딩, 정책 비교, 리스크 분석 요청.
-  입력: 화면 ID, 기능명, 정책 질문, 또는 자유 질문.
-  출력: 한국어 QA 보고서, 테스트 시나리오, 서비스 설명, 정책 비교 결과.
-user-invocable: true
-argument-hint: "[화면ID 또는 질문]"
+description: Use when Codex needs a bundled reference for the WisdomSpring service, including service overview, screen plans, bundled design images, admin policies, and QA guidance. Supports service explanation, policy comparison, screen structure walkthroughs, test strategy writing, scenario design, and Korean QA reporting without relying on a specific user's local folders.
 ---
 
 # WisdomSpring Service Reference
@@ -18,96 +10,6 @@ argument-hint: "[화면ID 또는 질문]"
 Use this skill to turn bundled WisdomSpring artifacts into a practical QA plan and execution report. Build only the minimum context needed, test with explicit assumptions, and leave a clear Korean record of scenarios, results, defects, and open questions.
 
 If the user is new to WisdomSpring, do not jump straight into test cases. First explain the service, the major screens, the user journey, and the visual tone using the bundled newcomer and design references.
-
-## Inline Knowledge Base
-
-아래 데이터는 스킬 로딩 시 즉시 참조한다. 별도 파일 읽기 없이 바로 답변에 사용한다.
-
-### IA Map
-
-| Mobile | Web | Depth | Name | Type |
-| --- | --- | --- | --- | --- |
-| `M-IN-001` | | 1 | 인트로 | page |
-| `M-HM-001` | `W-HM-001` | 1 | 홈(발견) | page |
-| `M-HM-030` | `W-HM-030` | 1 | 상단 메뉴 | drawer / side drawer |
-| `M-HM-B002` | `W-HM-P002` | 2 | 테마 전체보기 | bottom sheet / popup |
-| `M-HM-010` | `W-HM-010` | 2 | 테마 상세 | page |
-| `M-HM-020` | `W-HM-020` | 3 | 학습화면-영상 | page |
-| `M-HM-021` | `W-HM-021` | 3 | 학습화면-아티클 | page |
-| `M-HM-B022` | `W-HM-P022` | 4 | 전체회차 | bottom sheet / popup |
-| `M-HM-B023` | | 4 | 노트 | bottom sheet |
-| | `W-HM-P024` | 4 | 노트 댓글 | popup |
-| `M-SH-010` | `W-SH-010` | 2 | 검색결과 | popup / layer |
-| `M-FD-001` | `W-FD-001` | 1 | 질문피드 | page |
-| `M-FD-B030` | `W-FD-M030` | 2 | 답변쓰기 | modal |
-| `M-FD-010` | `W-FD-010` | 2 | 답변 상세 | page |
-| `M-FD-020` | `W-FD-020` | 3 | 오늘의 콘텐츠 | content |
-| `M-PR-001` | `W-PR-001` | 1 | 프로필 | content |
-| `M-PR-P110` | `W-PR-P110` | 3 | 프로필 설정 | popup |
-| `M-PR-120` | `W-PR-120` | 4 | 생각기록-오늘의 질문 | tab |
-| `M-PR-121` | `W-PR-121` | 4 | 노트 | tab |
-| `M-PR-122` | `W-PR-122` | 4 | 댓글 | tab |
-| `M-PR-130` | `W-PR-130` | 3 | 관심콘텐츠 | tab |
-| `M-PR-140` | `W-PR-140` | 3 | 팔로워 / 팔로잉 | tab |
-| `M-PR-210` | `W-PR-210` | 2 | 회원정보(설정) | page |
-| `M-PR-310` | `W-PR-310` | 2 | 결제관리 | page |
-| `M-PR-410` | `W-PR-410` | 2 | 멤버십 정보 | page |
-| `M-PR-420` | `W-PR-420` | 2 | 멤버십 가입 | page |
-| `M-PR-421` | `W-PR-421` | 4 | 결제정보 입력 및 가입 | page |
-| `M-PR-422` | `W-PR-422` | 5 | 상품 결제 | page |
-| `M-PR-P423` | `W-PR-P423` | 5 | NHN KCP 결제 | popup |
-| `M-IN-010` | `W-IN-010` | 1 | 로그인 | page |
-| `M-IN-011` | `W-IN-011` | 2 | 아이디 찾기 | page |
-| `M-IN-012` | `W-IN-012` | 3 | 비밀번호 찾기 | page |
-| `M-IN-020` | `W-IN-020` | 1 | 회원가입 | page |
-| `M-CS-010` | `W-CS-010` | 1 | About(멤버십 소개) | page |
-| `M-CS-011` | `W-CS-011` | 2 | 1개월 무료 체험권 | page |
-| `M-CS-020` | `W-CS-020` | 1 | 공지사항 | page |
-| `M-CS-050` | `W-CS-050` | 1 | 자주묻는질문(FAQ) | page |
-
-- `HM` = 홈·테마·학습, `FD` = 질문피드·답변, `PR` = 프로필·멤버십·결제, `IN` = 인트로·로그인·회원가입, `CS` = About·공지·FAQ
-- `M-` = 모바일, `W-` = 웹. 공통 ID(예: `HM-001`)는 양 플랫폼 동일 기능.
-
-### Screen Index
-
-| Shared ID | 화면명 | Reference file |
-| --- | --- | --- |
-| `HM-001` | 홈 메인(발견) | `screen-plans/HM-001 메인(발견).md` |
-| `HM-010` | 테마 상세 | `screen-plans/HM-010 테마 상세 페이지.md` |
-| `HM-020` | 학습화면-영상 | `screen-plans/HM-020 학습화면-영상.md` |
-| `HM-021` | 학습화면-아티클 | `screen-plans/HM-021 학습화면-아티클.md` |
-| `HM-030` | 상단 메뉴 | `screen-plans/HM-030 상단 메뉴.md` |
-| `HM-P022` | 전체 회차 팝업 | `screen-plans/HM-P022 전체 회차 팝업-바텀시트.md` |
-| `FD-001` | 질문피드 | `screen-plans/FD-001 질문피드.md` |
-| `FD-010` | 답변 상세 | `screen-plans/FD-010 답변 상세.md` |
-| `FD-B030`/`FD-M030` | 답변 작성 | `screen-plans/FD-B030 FD-M030 답변 작성.md` |
-| `PR-001`/`PR-120` | 프로필 생각기록 | `screen-plans/PR-001 PR-120 프로필의 생각기록-오늘의 질문.md` |
-| `PR-121` | 프로필 노트 | `screen-plans/PR-121 프로필-노트.md` |
-| `PR-122` | 프로필 댓글 | `screen-plans/PR-122 프로필-댓글.md` |
-| `PR-130` | 관심콘텐츠 | `screen-plans/PR-130 프로필-관심콘텐츠.md` |
-| `PR-140` | 팔로워/팔로잉 | `screen-plans/PR-140 프로필-팔로워.md` |
-| `PR-410` | 멤버십 정보 | `screen-plans/PR-410 멤버십 정보.md` |
-| `IN-001` | 인트로 첫 화면 | `screen-plans/M-IN-001 인트로 첫 화면.md` |
-| `M-HM-B023` | 모바일 노트 바텀시트 | `screen-plans/M-HM-B023 노트 바텀시트.md` |
-| `W-HM-P024` | 웹 노트 댓글 팝업 | `screen-plans/W-HM-P024 노트 댓글 PC(WEB).md` |
-
-### Source Loading Rules
-
-질문 유형에 따라 아래 순서로 필요한 파일만 읽는다. 위 IA Map과 Screen Index는 이미 인라인이므로 다시 읽지 않는다.
-
-1. 화면 ID가 주어지면 → Screen Index에서 매칭되는 `screen-plans/*.md` 1개만 읽는다.
-2. 정책·스케줄·노출·수정삭제 관련이면 → `references/admin-policy-summary.md`
-3. 어드민 목록·상세 필드·등록 플로우·제약 조건이면 → `references/admin-planning-spec.md`
-4. 디자인·레이아웃 시각 확인이면 → `references/design-image-index.md` + `references/design-images/`
-5. 화면 구조·계층·섹션 구성 설명이면 → `references/visual-structure-by-area.md`
-6. 비주얼 톤·분위기 질문이면 → `references/visual-design-summary.md`
-7. 서비스 입문 설명이면 → `references/service-primer.md`
-8. 커버리지 계획이면 → `references/test-areas.md`
-9. QA 보고서 형식이면 → `references/report-template.md`
-10. 기대결과 패턴이면 → `references/expected-results.md`
-11. 위 자료로 부족하면 → 사용자에게 스크린샷이나 추가 자료 요청
-
-영역 약어로 들어오면 이렇게 매핑한다: home/발견 → `HM-*`, 질문/답변 → `FD-*`, 프로필/멤버십 → `PR-*`, 인트로/로그인 → `IN-*`, 공지/FAQ → `CS-*`
 
 ## Workflow
 
@@ -137,11 +39,39 @@ Classify the request into one of these modes before reading many files:
 
 If the user names screen IDs such as `HM-001`, `FD-001`, or `PR-410`, use those as the primary scope. If the user is vague, start with the baseline areas in `references/test-areas.md`.
 
-### 2. Build context from inline knowledge first
+### 2. Build context with progressive disclosure
 
-IA Map, Screen Index, Source Loading Rules는 이미 이 문서에 인라인되어 있다. 별도 파일을 읽지 않고 바로 사용한다.
+Always read these first:
 
-추가 파일은 Source Loading Rules에 따라 필요한 것만 읽는다. `screen-plans` 폴더를 통째로 읽지 않는다.
+- `references/source-locations.md`
+- `references/service-overview.md`
+- `references/service-primer.md`
+- `references/visual-design-summary.md`
+- `references/ia-map.md`
+- `references/screen-index.md`
+- `references/latest-policy-updates.md`
+
+Read these only when needed:
+
+- `references/test-areas.md` for coverage planning
+- `references/admin-policy-summary.md` when the request touches admin, scheduling, open states, content visibility, or edit-delete rules
+- `references/admin-planning-spec.md` when the request needs admin list columns, detail fields, registration flow, modal behavior, field constraints, answer-record handling, or content-note handling
+- `references/report-template.md` when you need to return a structured QA artifact
+- `references/expected-results.md` when you need richer expected-result patterns
+- `references/example-prompts.md` when you need ready-to-copy usage examples for end users
+- `references/design-image-index.md` when you need to map a screen or flow to bundled design image files under `references/design-images/`
+- `references/visual-structure-by-area.md` when you need a deeper explanation of screen hierarchy, section composition, or mobile-web structural difference
+
+Then load only the matching local artifacts for the scoped area:
+
+- bundled IA map for menu depth, page or layer shape, and platform mapping
+- bundled markdown screen definitions under `references/screen-plans/` for steps, rules, and unresolved notes
+- bundled image files under `references/design-images/` when visual confirmation is required before asking for user screenshots
+- user-provided screenshots or live-service evidence only when the bundled images are not enough
+
+Do not bulk-load the full `screen-plans` folder unless the user explicitly asks for a full-system regression.
+
+If `references/latest-policy-updates.md` conflicts with an older screen definition, treat the latest policy update as the current product behavior.
 
 ### 2-1. Newcomer onboarding mode
 
@@ -154,7 +84,9 @@ When the user appears unfamiliar with WisdomSpring, answer in this order before 
 5. the visual and interaction tone
 6. the membership and admin-policy implications
 
-Source Loading Rules 7번(service-primer.md)과 6번(visual-design-summary.md)을 읽는다. 화면 구조 질문이면 5번(visual-structure-by-area.md)도 읽는다.
+Use `references/service-primer.md` and `references/visual-design-summary.md` first for this mode.
+
+When the user asks how a screen is laid out or why the design feels the way it does, also read `references/visual-structure-by-area.md`.
 
 ### 2-2. Admin deep-reference mode
 
@@ -272,6 +204,6 @@ Always call out web and mobile differences when both artifacts exist.
 - If you cannot run the service, still return a document-based test plan and risk list.
 - If artifacts conflict, reconcile them internally and answer with the most defensible conclusion or a short confirmation note without referencing source file names or the term `spec gap`.
 - This skill is packaged to be shareable; prefer bundled references over machine-specific absolute paths.
-- If the user asks what the service looks or feels like, follow Source Loading Rules 6번.
-- If the user asks for screen structure or layout explanation, follow Source Loading Rules 4번+5번+6번.
-- If the user asks about admin list structure or management behavior, follow Source Loading Rules 2번+3번.
+- If the user asks what the service looks or feels like, answer from the bundled visual-design summary rather than generic design language.
+- If the user asks for screen structure or layout explanation, combine `visual-design-summary.md`, `visual-structure-by-area.md`, and the matching bundled images instead of answering from memory.
+- If the user asks about admin list structure or management behavior, do not stop at summary rules. Load `admin-planning-spec.md` and answer with the relevant fields, constraints, and flow details.
